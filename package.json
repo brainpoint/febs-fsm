@@ -1,9 +1,15 @@
 {
   "description": "Concurrent Finite State Machine",
   "optionalDependencies": {},
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "febs": "^0.8.92",
+    "rollup": "^2.1.0",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.8.3"
   },
   "homepage": "https://github.com/brainpoint/febs-fsm#readme",
   "repository": {
@@ -22,13 +28,22 @@
     "state",
     "machine"
   ],
+  "files": [
+    "src",
+    "types",
+    "standard",
+    "concurrent"
+  ],
   "maintainers": [
     {
       "name": "brainpoint",
       "email": "bpoint.lee@gmail.com"
     }
   ],
-  "main": "index.ts",
+  "main": "standard/index.common.js",
+  "module": "standard/index.esm.min.js",
+  "unpkg": "standard/index.min.js",
+  "types": "types/index.d.ts",
   "name": "febs-fsm",
-  "version": "0.0.3"
+  "version": "0.0.5"
 }
