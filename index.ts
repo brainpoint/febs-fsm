@@ -5,5 +5,5 @@ import StateMechine from './standard/stateMechine';
 export {
   State,
   StateEvent,
-  StateMechine
+  StateMechine,
 }

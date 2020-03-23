@@ -63,7 +63,7 @@ mechine.process_event(new Event1());  // process_event.
 
 ## Standard FSM
 
-[standard](./standard/readme.md): Store current state in mechine object. This applies to situations such as chat rooms.
+[standard](./lib/standard/readme.md): Store current state in mechine object. This applies to situations such as chat rooms.
 
 ```js
 import {
@@ -75,7 +75,7 @@ import {
 
 ### Concurrent FSM
 
-[concurrent](./concurrent/readme.md): Use the FSM concurrently. It isnot store current state in mechine object. Use context to pass the current state to FSM. Avoidance of repetition to set up FSM object.
+[concurrent](./lib/concurrent/readme.md): Use the FSM concurrently. It isnot store current state in mechine object. Use context to pass the current state to FSM. Avoidance of repetition to set up FSM object.
 
 ```js
 import {

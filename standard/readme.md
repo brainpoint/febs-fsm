@@ -8,7 +8,7 @@ Finite state machine.
 ### Define event.
 
 ```js
-import {State, StateEvent, StateMechine} from '@/libs/stateMechine/standard';
+import {State, StateEvent, StateMechine} from 'febs-fsm';
 
 // Event1.
 class Event1 extends StateEvent {

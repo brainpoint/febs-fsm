@@ -28,7 +28,7 @@
       "email": "bpoint.lee@gmail.com"
     }
   ],
-  "main": "lib/index.ts",
+  "main": "index.ts",
   "name": "febs-fsm",
-  "version": "0.0.1"
+  "version": "0.0.3"
 }

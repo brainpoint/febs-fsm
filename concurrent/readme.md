@@ -11,7 +11,7 @@ Finite state machine.
 ### Define event.
 
 ```js
-import {State, StateEvent, StateMechine} from '@/libs/stateMechine/concurrent';
+import {State, StateEvent, StateMechine} from 'febs-fsm/concurrent';
 
 // Event1.
 class Event1 extends StateEvent {
