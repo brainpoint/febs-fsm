@@ -42,7 +42,11 @@ export default class StateMechine {
   async process_event(currentStateIdentify:any, ctx:any, event: StateEvent): Promise<any> {
     // lock();
     if (typeof currentStateIdentify !== 'string') { 
-      currentStateIdentify = currentStateIdentify.name as string;
+      currentStateIdentify = currentStateIdentify.identify as string;
+    }
+
+    if (typeof currentStateIdentify !== 'string' || currentStateIdentify.length == 0) {
+      throw new Error('currentState identify is empty');
     }
 
     

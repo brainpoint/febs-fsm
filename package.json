@@ -45,5 +45,5 @@
   "unpkg": "standard/index.min.js",
   "types": "types/index.d.ts",
   "name": "febs-fsm",
-  "version": "0.0.5"
+  "version": "0.0.6"
 }

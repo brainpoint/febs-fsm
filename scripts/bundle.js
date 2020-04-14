@@ -96,6 +96,7 @@ function build(pkg, dir) {
               .then(bundle => bundleEsm(bundle, false))
               .then(res=>{
                 if (dir == 'concurrent') {
+                  febs.file.fileRemove(path.join(__dirname, '..', dir, 'types', 'index.d.ts'));
                   return febs.file.fileCopyAsync(
                     path.join(__dirname, '..', 'src', dir, 'index.d.ts'), 
                     path.join(__dirname, '..', dir, 'types', 'index.d.ts'));

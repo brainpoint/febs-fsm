@@ -26,6 +26,10 @@
       addTransition(event, state) {
           let eventIdentify = event.identify;
           let stateIdentify = state.identify;
+          if (typeof eventIdentify !== 'string' || eventIdentify.length == 0 ||
+              typeof stateIdentify !== 'string' || stateIdentify.length == 0) {
+              throw new Error('identify is empty');
+          }
           if (this._mechine) {
               throw new Error(`the state mechine is running: ${eventIdentify}`);
           }
@@ -42,7 +46,10 @@
               var eventIdentify = event;
           }
           else {
-              var eventIdentify = event.name;
+              var eventIdentify = event.identify;
+          }
+          if (typeof eventIdentify !== 'string' || eventIdentify.length == 0) {
+              throw new Error('event identify is empty');
           }
           return this._transitions.get(eventIdentify);
       }
@@ -120,7 +127,10 @@
           return __awaiter(this, void 0, void 0, function* () {
               // lock();
               if (typeof currentStateIdentify !== 'string') {
-                  currentStateIdentify = currentStateIdentify.name;
+                  currentStateIdentify = currentStateIdentify.identify;
+              }
+              if (typeof currentStateIdentify !== 'string' || currentStateIdentify.length == 0) {
+                  throw new Error('currentState identify is empty');
               }
               let curState = this._allStates.get(currentStateIdentify);
               if (curState) {

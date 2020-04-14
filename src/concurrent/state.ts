@@ -41,6 +41,12 @@ export default abstract class State {
     let eventIdentify = event.identify;
     let stateIdentify = state.identify;
 
+
+    if (typeof eventIdentify !== 'string' || eventIdentify.length == 0 ||
+      typeof stateIdentify !== 'string' || stateIdentify.length == 0) {
+      throw new Error('identify is empty');
+    }
+
     if (this._mechine) {
       throw new Error(`the state mechine is running: ${eventIdentify}`);
     }
@@ -59,7 +65,11 @@ export default abstract class State {
       var eventIdentify = event;
     }
     else {
-      var eventIdentify = event.name as string;
+      var eventIdentify = event.identify as string;
+    }
+
+    if (typeof eventIdentify !== 'string' || eventIdentify.length == 0) {
+      throw new Error('event identify is empty');
     }
     
     return this._transitions.get(eventIdentify);
